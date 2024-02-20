@@ -104,9 +104,9 @@ def sort_box(box_file):
         y1 = row["y"]
         
         if dfidx != 0 and abs(temp1 - y1) > line_threshold:
-             newlistline = sorted(listline, key = lambda k:k['x'])
-             res.extend(newlistline)
-             listline = []
+            newlistline = sorted(listline, key = lambda k:k['x'])
+            res.extend(newlistline)
+            listline = []
         temp1 = y1
         dfidx+=1
         dictbox = {"x":row["x"],"bboxes":row["bboxes"]}
@@ -123,6 +123,10 @@ def recognition(img, session_r_h, session_r_v, bboxs, r_size, images_ph_h, image
     result = ''
     num = len(boxlist)
     idx = 0
+    img_affined_final = None
+    img_affined_final2 = None
+    img_affined = None
+
     for idx, item in enumerate(boxlist):
         ori_box = item['bboxes']
         img_affined = affine(img, ori_box, r_size, direction)
@@ -155,7 +159,7 @@ def recognition(img, session_r_h, session_r_v, bboxs, r_size, images_ph_h, image
             img_affined_final = np.concatenate((img_affined_final, img_affined), 0)
 
     if idx > 3 and idx <7:
-         for j in range(4, 7-idx):
+        for j in range(4, 7-idx):
             img_affined_final2 = np.concatenate((img_affined_final2, img_affined), 0)
     if idx < 4:
         if direction == 0:

@@ -24,11 +24,22 @@ python containernumber_test_ckpt.py
 
 ## Dataset
 The dataset used for training and evaluation can be accessed via [Google Drive](https://drive.google.com/drive/folders/1u14fhGoiS-R8dMDBqtX-gRPD0a5z_4jV?usp=sharing)
+```
+/ContainerNumber-OCR
+│
+├── train_images.
+├── train_images_label
+├── test_images
+├── test_labels
+├── ckpt
+├── pb+models
+└── ...
+```
 
 ## Evaluation
-Evaluate the model's performance by using the `evaluate.py` script. Specify the input and label paths using `-i` for input and `-l` for labels, respectively:
+Evaluate the model's performance by using the `evaluate.py` script. Specify the input and label paths using `-i` for input folder and `-l` for labels folder, respectively:
 ```
-python evaluate.py -i /path/to/your/data -l /path/to/your/labels
+python evaluate.py -i /test_images -l /test_labels
 ```
 
 ## Convert to Openvino Model

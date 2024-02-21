@@ -32,7 +32,7 @@ The dataset used for training and evaluation can be accessed via [Google Drive](
 ├── test_images
 ├── test_labels
 ├── ckpt
-├── pb+models
+├── pb_models
 └── ...
 ```
 

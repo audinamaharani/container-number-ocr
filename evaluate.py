@@ -152,6 +152,7 @@ def main(img_path, ground_truth):
     evaluate_model(img_path, ground_truth)
 
 if __name__ =="__main__":
+    
     parser = argparse.ArgumentParser(description='Evaluate the OCR model')
     parser.add_argument('-i', '--input', type=str, required=True, help='Path to the input image directory.')
     parser.add_argument('-l', '--labels', type=str, required=True, help='Path to the ground truth directory.')
